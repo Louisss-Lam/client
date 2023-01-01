@@ -2,6 +2,13 @@ import './App.css';
 import './normal.css';
 
 function App() {
+  
+  async function handleSubmit(e) {
+    e.preventDefault();
+    console.log('submit');
+  }
+
+
   return (
     <div className="App">
       <aside className='sidemenu'>
@@ -35,11 +42,13 @@ function App() {
           </div>
         </div>
         <div className='chat-input-holder'>
-          <textarea rows="1"
-            className='chat-input-textarea'
-          >
+          <form onSubmit={handleSubmit}>
+            <input rows="1"
+              className='chat-input-textarea'
+            >
 
-          </textarea>
+            </input>
+          </form>
         </div>
       </section>
     </div>
